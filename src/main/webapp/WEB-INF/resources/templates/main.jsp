@@ -12,7 +12,7 @@
     </head>
 
     <body>
-        Quote Pad
+        <img src="resources/images/accept"/>
         <script type="text/javascript" src="resources/scripts/dummy"></script>
     </body>
 </html>

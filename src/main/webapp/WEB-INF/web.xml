@@ -16,6 +16,10 @@
     </listener>
 
     <filter>
+        <filter-name>imageResolver</filter-name>
+        <filter-class>com.ilyagubarev.quotepad.web.ImageResolver</filter-class>
+    </filter>
+    <filter>
         <filter-name>mainPageResolver</filter-name>
         <filter-class>com.ilyagubarev.quotepad.web.MainPageResolver</filter-class>
     </filter>
@@ -32,6 +36,11 @@
         <filter-class>com.ilyagubarev.quotepad.web.TemplateResolver</filter-class>
     </filter>
 
+    <filter-mapping>
+        <filter-name>imageResolver</filter-name>
+        <url-pattern>/resources/images/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
     <filter-mapping>
         <filter-name>mainPageResolver</filter-name>
         <url-pattern>/*</url-pattern>
