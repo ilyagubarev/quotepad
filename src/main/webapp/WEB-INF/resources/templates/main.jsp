@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html data-ng-app="quotepad">
 
     <head>
         <base href="${system.path}">
@@ -11,8 +11,22 @@
         <link rel="stylesheet" type="text/css" href="resources/styles/general.css"/>
     </head>
 
-    <body>
-        <img src="resources/images/accept.png"/>
+    <body data-ng-controller="controller">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="author in authors">
+                    <td>{{author.name}}</td>
+                    <td>{{author.country}}</td>
+                </tr>
+            </tbody>
+        </table>
 
         <script type="text/javascript" src="resources/scripts/utility/system/external/angular.js"></script>
         <script type="text/javascript" src="resources/scripts/utility/system/external/require.js"></script>

@@ -1,8 +1,5 @@
-(function (requirejs) {
+requirejs.config({
+    'baseUrl': 'resources/scripts/application'
+});
 
-    requirejs.config({
-        'baseUrl': 'resources/scripts/application'
-    });
-
-    require(['main']);
-})(requirejs);
+require(['main']);
