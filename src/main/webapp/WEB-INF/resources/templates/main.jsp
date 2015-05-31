@@ -13,6 +13,9 @@
 
     <body>
         <img src="resources/images/accept"/>
-        <script type="text/javascript" src="resources/scripts/dummy"></script>
+
+        <script type="text/javascript" src="resources/scripts/utility/system/external/angular.js"></script>
+        <script type="text/javascript" src="resources/scripts/utility/system/external/require.js"></script>
+        <script type="text/javascript" src="resources/scripts/configuration.js"></script>
     </body>
 </html>

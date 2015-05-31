@@ -24,7 +24,7 @@ public class ScriptResolver implements Filter {
         String path = httpRequest.getContextPath();
         String uri = httpRequest.getRequestURI();
         String resource = uri.substring(path.length());
-        String template = String.format("/WEB-INF%s.js", resource);
+        String template = String.format("/WEB-INF%s", resource);
         request.getRequestDispatcher(template).forward(request, response);
     }
 
