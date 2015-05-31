@@ -107,7 +107,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                    <warName>spa</warName>
+                    <warName>quotepad</warName>
                 </configuration>
             </plugin>
         </plugins>
