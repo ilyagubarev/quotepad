@@ -6,6 +6,15 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
                              http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/context/application.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
     <filter>
         <filter-name>mainPageResolver</filter-name>
         <filter-class>com.ilyagubarev.quotepad.web.MainPageResolver</filter-class>
