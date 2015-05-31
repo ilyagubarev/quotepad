@@ -5,7 +5,7 @@
 <html>
 
     <head>
-        <base href="<%request.getContextPath();%>">
+        <base href="${system.path}">
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <title>Quote Pad</title>
         <link rel="stylesheet" type="text/css" href="resources/styles/general"/>
