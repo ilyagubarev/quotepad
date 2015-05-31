@@ -19,6 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <versions.java>1.8</versions.java>
         <versions.java.ee>7.0</versions.java.ee>
+        <version.libs.jackson>2.2.3</version.libs.jackson>
         <version.libs.spring>4.1.6.RELEASE</version.libs.spring>
         <versions.plugins.compiler>3.3</versions.plugins.compiler>
         <versions.plugins.javadoc>2.10.3</versions.plugins.javadoc>
@@ -32,6 +33,21 @@
             <artifactId>javaee-web-api</artifactId>
             <version>${versions.java.ee}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${version.libs.jackson}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${version.libs.jackson}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${version.libs.jackson}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -94,6 +110,7 @@
                     <version>${versions.plugins.war}</version>
                     <configuration>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
+                        <warName>quotepad</warName>
                     </configuration>
                 </plugin>
             </plugins>
@@ -106,9 +123,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <warName>quotepad</warName>
-                </configuration>
             </plugin>
         </plugins>
     </build>
