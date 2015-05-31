@@ -20,6 +20,10 @@
         <filter-class>com.ilyagubarev.quotepad.web.MainPageResolver</filter-class>
     </filter>
     <filter>
+        <filter-name>styleResolver</filter-name>
+        <filter-class>com.ilyagubarev.quotepad.web.StyleResolver</filter-class>
+    </filter>
+    <filter>
         <filter-name>templateResolver</filter-name>
         <filter-class>com.ilyagubarev.quotepad.web.TemplateResolver</filter-class>
     </filter>
@@ -27,6 +31,11 @@
     <filter-mapping>
         <filter-name>mainPageResolver</filter-name>
         <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>styleResolver</filter-name>
+        <url-pattern>/resources/styles/*</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
     <filter-mapping>
