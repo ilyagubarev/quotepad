@@ -1,0 +1,10 @@
+# Java compiled classes:
+*.class
+
+# Java packages:
+*.jar
+*.war
+*.ear
+
+# Maven output folder:
+/target/
