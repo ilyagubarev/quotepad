@@ -1,6 +1,6 @@
 (function (angular) {
 
-    var application = angular.module("quotepad", []);
+    var application = angular.module("quotepad", ['ngRoute']);
 
     application.run(function ($http) {
 
@@ -8,6 +8,30 @@
             'Content-Type': 'application/json'
         };
     });
+
+
+    application.config(['$routeProvider', function($routeProvider, $locationProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'resources/templates/home',
+                controller: 'homeController'
+            }).
+            when('/authors', {
+                templateUrl: 'resources/templates/authors',
+                controller: 'authorController'
+            }).
+            when('/works', {
+                templateUrl: 'resources/templates/works',
+                controller: 'workController'
+            }).
+            otherwise({
+                redirectTo: '/'
+            });
+
+            $locationProvider.html5Mode(true);
+    }]);
+
+    application.controller("homeController", function ($scope, $http) {});
 
     application.controller("authorController", function ($scope, $http) {
 
@@ -32,4 +56,6 @@
 
         $scope.renew();
     });
+
+    application.controller("workController", function ($scope, $http) {});
 })(angular);

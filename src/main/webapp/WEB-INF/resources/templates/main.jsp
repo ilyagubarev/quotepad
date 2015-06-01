@@ -11,30 +11,16 @@
         <link rel="stylesheet" type="text/css" href="resources/styles/general.css"/>
     </head>
 
-    <body data-ng-controller="authorController">
+    <body>
 
-        <input type="button" value="Update" data-ng-click="renew()"/></br>
+        <a href="#/">Home</a><br/>
+        <a href="#/authors">Authors</a><br/>
+        <a href="#/works">Works</a><br/>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Country</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr data-ng-repeat="author in authors">
-                    <td>{{author.name}}</td>
-                    <td>{{author.country}}</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <input type="text" data-ng-model="name" placeholder="Name"/><br>
-        <input type="text" data-ng-model="country" placeholder="Country"/><br>
-        <input type="button" value="Add" data-ng-click="add(name, country)"/>
+        <div data-ng-view></div>
 
         <script type="text/javascript" src="resources/scripts/utility/system/external/angular.js"></script>
+        <script type="text/javascript" src="resources/scripts/utility/system/external/angular-route.js"></script>
         <script type="text/javascript" src="resources/scripts/application/main.js"></script>
     </body>
 </html>
