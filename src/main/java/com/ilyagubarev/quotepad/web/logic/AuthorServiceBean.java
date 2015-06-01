@@ -1,45 +1,43 @@
 package com.ilyagubarev.quotepad.web.logic;
 
-import java.util.Collection;
-import java.util.LinkedList;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ilyagubarev.quotepad.structures.Author;
+import com.ilyagubarev.quotepad.structures.User;
+import com.ilyagubarev.quotepad.web.data.AuthorRepository;
+import com.ilyagubarev.quotepad.web.data.Bean;
 
 @Service
-public class AuthorServiceBean implements AuthorService {
+public class AuthorServiceBean extends Bean implements AuthorService {
 
-    private final Collection<Author> authors;
+    @Autowired
+    private AuthorRepository authors;
 
-    public AuthorServiceBean() {
-        this.authors = new LinkedList<>();
-        Author shakespeare = new Author();
-        shakespeare.setId(1);
-        shakespeare.setName("Shakespeare, William");
-        shakespeare.setDescription("A short description for Shakespeare");
-        shakespeare.setCountry("England");
-        shakespeare.setBirth(0L);
-        shakespeare.setDeath(0L);
-        this.authors.add(shakespeare);
-        Author huxley = new Author();
-        huxley.setId(2);
-        huxley.setName("Huxley, Aldous");
-        huxley.setDescription("A short description for Huxley");
-        huxley.setCountry("England");
-        huxley.setBirth(0L);
-        huxley.setDeath(0L);
-        this.authors.add(huxley);
+    @Override
+    public Author add(User user, Author blank) {
+        return authors.add(user, blank);
     }
 
     @Override
-    public Author add(Author author) {
-        authors.add(author);
-        return author;
+    public Map<Integer, Author> filter(User user, String country) {
+        return authors.filter(user, country);
     }
 
     @Override
-    public Collection<Author> filter() {
-        return authors;
+    public Author get(User user, int id) {
+        return authors.get(user, id);
+    }
+
+    @Override
+    public void remove(User user, int id) {
+        authors.remove(user, id);
+    }
+
+    @Override
+    public Author set(User user, int id, Author blank) {
+        return authors.set(user, id, blank);
     }
 }

@@ -20,11 +20,11 @@ public class AuthorControllerBean extends AbstractControllerBean {
 
     @RequestMapping(method = POST, consumes = JSON, produces = JSON)
     public Author add(@RequestBody Author author) {
-        return authors.add(author);
+        return authors.add(null, author);
     }
 
     @RequestMapping(method = GET, produces = JSON)
     public Collection<Author> filter() {
-        return authors.filter();
+        return authors.filter(null, null).values();
     }
 }
