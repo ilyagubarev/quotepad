@@ -46,7 +46,7 @@ public class MainPageResolver implements Filter {
                 .append(":")
                 .append(request.getServerPort())
                 .append(request.getContextPath())
-                .append("/home")
+                .append("/")
                 .toString();
     }
 

@@ -13,14 +13,14 @@
 
     <body>
 
-        <a href="#/">Home</a><br/>
-        <a href="#/authors">Authors</a><br/>
-        <a href="#/works">Works</a><br/>
+        <a ui-sref="home">Home</a><br/>
+        <a ui-sref="authors">Authors</a><br/>
+        <a ui-sref="works">Works</a><br/>
 
-        <div data-ng-view></div>
+        <div ui-view></div>
 
         <script type="text/javascript" src="resources/scripts/utility/system/external/angular.js"></script>
-        <script type="text/javascript" src="resources/scripts/utility/system/external/angular-route.js"></script>
+        <script type="text/javascript" src="resources/scripts/utility/system/external/angular-ui-router.js"></script>
         <script type="text/javascript" src="resources/scripts/application/main.js"></script>
     </body>
 </html>

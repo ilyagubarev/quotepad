@@ -1,6 +1,6 @@
 (function (angular) {
 
-    var application = angular.module("quotepad", ['ngRoute']);
+    var application = angular.module("quotepad", ['ui.router']);
 
     application.run(function ($http) {
 
@@ -9,26 +9,30 @@
         };
     });
 
+    application.config(["$locationProvider", function($locationProvider) {
+        $locationProvider.html5Mode(true);
+    }]);
 
-    application.config(['$routeProvider', function($routeProvider, $locationProvider) {
-        $routeProvider.
-            when('/', {
+    application.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+ 
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+            .state('home', {
+                url:'/',
                 templateUrl: 'resources/templates/home',
                 controller: 'homeController'
-            }).
-            when('/authors', {
+            })
+            .state('authors', {
+                url:'/authors',
                 templateUrl: 'resources/templates/authors',
                 controller: 'authorController'
-            }).
-            when('/works', {
+            })
+            .state('works', {
+                url:'/works',
                 templateUrl: 'resources/templates/works',
                 controller: 'workController'
-            }).
-            otherwise({
-                redirectTo: '/'
             });
-
-            $locationProvider.html5Mode(true);
     }]);
 
     application.controller("homeController", function ($scope, $http) {});
