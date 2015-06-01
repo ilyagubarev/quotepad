@@ -1,20 +1,24 @@
 package com.ilyagubarev.quotepad.web.presentation.models;
 
 import java.util.Collection;
-import java.util.LinkedList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 import com.ilyagubarev.quotepad.structures.Author;
+import com.ilyagubarev.quotepad.web.logic.AuthorService;
 
 @Controller
 @RequestMapping("/authors")
 public class AuthorControllerBean extends AbstractControllerBean {
 
+    @Autowired
+    private AuthorService authors;
+
     @RequestMapping(method = GET, produces = JSON)
     public Collection<Author> filter() {
-        return new LinkedList<>();
+        return authors.filter();
     }
 }
