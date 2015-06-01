@@ -13,11 +13,13 @@
 
         $scope.authors = [];
 
-        $scope.add = function (author) {
-            $http.post("resources/models/authors", author)
-                    .success(function () {
-                        $scope.authors.push(author);
-                    });
+        $scope.add = function (name, country) {
+            $http.post("resources/models/authors", {
+                name: name,
+                country: country
+            }).success(function (author) {
+                $scope.authors.push(author);
+            });
         };
 
         $scope.renew = function () {

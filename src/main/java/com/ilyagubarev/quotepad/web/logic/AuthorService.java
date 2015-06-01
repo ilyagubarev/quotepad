@@ -6,5 +6,7 @@ import com.ilyagubarev.quotepad.structures.Author;
 
 public interface AuthorService {
 
+    Author add(Author author);
+
     Collection<Author> filter();
 }

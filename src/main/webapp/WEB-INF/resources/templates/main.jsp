@@ -13,6 +13,8 @@
 
     <body data-ng-controller="authorController">
 
+        <input type="button" value="Update" data-ng-click="renew()"/></br>
+
         <table>
             <thead>
                 <tr>
@@ -28,11 +30,11 @@
             </tbody>
         </table>
 
+        <input type="text" data-ng-model="name" placeholder="Name"/><br>
+        <input type="text" data-ng-model="country" placeholder="Country"/><br>
+        <input type="button" value="Add" data-ng-click="add(name, country)"/>
+
         <script type="text/javascript" src="resources/scripts/utility/system/external/angular.js"></script>
         <script type="text/javascript" src="resources/scripts/application/main.js"></script>
-        <!--
-            <script type="text/javascript" src="resources/scripts/utility/system/external/require.js"></script>
-            <script type="text/javascript" src="resources/scripts/configuration.js"></script>
-        -->
     </body>
 </html>

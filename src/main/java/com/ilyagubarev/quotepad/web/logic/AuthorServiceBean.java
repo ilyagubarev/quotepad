@@ -33,6 +33,12 @@ public class AuthorServiceBean implements AuthorService {
     }
 
     @Override
+    public Author add(Author author) {
+        authors.add(author);
+        return author;
+    }
+
+    @Override
     public Collection<Author> filter() {
         return authors;
     }
