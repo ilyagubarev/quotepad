@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="resources/styles/general.css"/>
     </head>
 
-    <body data-ng-controller="controller">
+    <body data-ng-controller="authorController">
 
         <table>
             <thead>
