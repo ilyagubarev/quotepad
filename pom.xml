@@ -21,7 +21,9 @@
         <versions.java.ee>7.0</versions.java.ee>
         <version.libs.jackson>2.2.3</version.libs.jackson>
         <version.libs.spring>4.1.6.RELEASE</version.libs.spring>
+        <version.misc.runner>7.0.57.2</version.misc.runner>
         <versions.plugins.compiler>3.3</versions.plugins.compiler>
+        <versions.plugins.dependency>2.10</versions.plugins.dependency>
         <versions.plugins.javadoc>2.10.3</versions.plugins.javadoc>
         <versions.plugins.source>2.4</versions.plugins.source>
         <versions.plugins.war>2.6</versions.plugins.war>
@@ -113,12 +115,39 @@
                         <warName>quotepad</warName>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${versions.plugins.dependency}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.github.jsimone</groupId>
+                                    <artifactId>webapp-runner</artifactId>
+                                    <version>${version.misc.runner}</version>
+                                    <destFileName>runner.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
