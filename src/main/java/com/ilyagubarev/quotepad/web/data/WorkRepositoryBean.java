@@ -3,9 +3,12 @@ package com.ilyagubarev.quotepad.web.data;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import com.ilyagubarev.quotepad.structures.User;
 import com.ilyagubarev.quotepad.structures.Work;
 
+@Repository
 public class WorkRepositoryBean extends ConcurrentBean
         implements WorkRepository {
 
