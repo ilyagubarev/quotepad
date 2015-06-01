@@ -29,7 +29,10 @@
         </table>
 
         <script type="text/javascript" src="resources/scripts/utility/system/external/angular.js"></script>
-        <script type="text/javascript" src="resources/scripts/utility/system/external/require.js"></script>
-        <script type="text/javascript" src="resources/scripts/configuration.js"></script>
+        <script type="text/javascript" src="resources/scripts/application/main.js"></script>
+        <!--
+            <script type="text/javascript" src="resources/scripts/utility/system/external/require.js"></script>
+            <script type="text/javascript" src="resources/scripts/configuration.js"></script>
+        -->
     </body>
 </html>
