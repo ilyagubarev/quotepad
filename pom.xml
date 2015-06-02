@@ -112,6 +112,7 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${versions.plugins.war}</version>
                     <configuration>
+                        <warSourceExcludes>resources/styles/*.less</warSourceExcludes>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                         <warName>quotepad</warName>
                     </configuration>
