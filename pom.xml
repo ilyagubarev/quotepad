@@ -25,6 +25,7 @@
         <versions.plugins.compiler>3.3</versions.plugins.compiler>
         <versions.plugins.dependency>2.10</versions.plugins.dependency>
         <versions.plugins.javadoc>2.10.3</versions.plugins.javadoc>
+        <versions.plugins.less>1.7.0.1.1</versions.plugins.less>
         <versions.plugins.source>2.4</versions.plugins.source>
         <versions.plugins.war>2.6</versions.plugins.war>
     </properties>
@@ -119,6 +120,44 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>${versions.plugins.dependency}</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy</goal>
+                            </goals>
+                            <configuration>
+                                <artifactItems>
+                                    <artifactItem>
+                                        <groupId>com.github.jsimone</groupId>
+                                        <artifactId>webapp-runner</artifactId>
+                                        <version>${version.misc.runner}</version>
+                                        <destFileName>runner.jar</destFileName>
+                                    </artifactItem>
+                                </artifactItems>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.lesscss</groupId>
+                    <artifactId>lesscss-maven-plugin</artifactId>
+                    <version>${versions.plugins.less}</version>
+                    <configuration>
+                        <sourceDirectory>${project.basedir}/src/main/webapp/resources/styles</sourceDirectory>
+                        <outputDirectory>${project.build.directory}/${project.build.finalName}/resources/styles</outputDirectory>
+                        <compress>true</compress>
+                        <includes>
+                            <include>*.less</include>
+                        </includes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -128,26 +167,12 @@
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
             <plugin>
+                <groupId>org.lesscss</groupId>
+                <artifactId>lesscss-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>com.github.jsimone</groupId>
-                                    <artifactId>webapp-runner</artifactId>
-                                    <version>${version.misc.runner}</version>
-                                    <destFileName>runner.jar</destFileName>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
