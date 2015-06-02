@@ -13,11 +13,9 @@
 
     <body>
 
-        <a ui-sref="home">Home</a><br/>
-        <a ui-sref="authors">Authors</a><br/>
-        <a ui-sref="works">Works</a><br/>
-
-        <div ui-view></div>
+        <div data-ui-view="header"></div>
+        <div data-ui-view="content"></div>
+        <div data-ui-view="footer"></div>
 
         <script type="text/javascript" src="resources/scripts/utility/system/external/angular.js"></script>
         <script type="text/javascript" src="resources/scripts/utility/system/external/angular-ui-router.js"></script>

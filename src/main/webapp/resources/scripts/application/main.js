@@ -18,20 +18,48 @@
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            .state('home', {
+            .state('root', {
                 url:'/',
-                templateUrl: 'resources/templates/home',
-                controller: 'homeController'
+                views: {
+                    header: {
+                        templateUrl: 'resources/templates/header'
+                    },
+                    content: {
+                        templateUrl: 'resources/templates/home'
+                    },
+                    footer: {
+                        templateUrl: 'resources/templates/footer'
+                    }
+                }
             })
-            .state('authors', {
-                url:'/authors',
-                templateUrl: 'resources/templates/authors',
-                controller: 'authorController'
+
+            .state('root.authors', {
+                url:'authors',
+                views: {
+                    'content@': {
+                        templateUrl: 'resources/templates/authors',
+                        controller: 'authorController'
+                    }
+                }
             })
-            .state('works', {
-                url:'/works',
-                templateUrl: 'resources/templates/works',
-                controller: 'workController'
+
+            .state('root.quotes', {
+                url:'quotes',
+                views: {
+                    'content@': {
+                        templateUrl: 'resources/templates/quotes'
+                    }
+                }
+            })
+
+            .state('root.works', {
+                url:'works',
+                views: {
+                    'content@': {
+                        templateUrl: 'resources/templates/works',
+                        controller: 'workController'
+                    }
+                }
             });
     }]);
 
