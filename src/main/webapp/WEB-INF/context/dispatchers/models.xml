@@ -13,7 +13,7 @@
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:annotation-config/>
-    <context:component-scan base-package="com.ilyagubarev.quotepad.web.presentation.models"/>
+    <context:component-scan base-package="com.ilyagubarev.quotepad.web.context.presentation.models"/>
 
     <mvc:annotation-driven/>
 </beans>
