@@ -1,4 +1,4 @@
-package com.ilyagubarev.quotepad.web.data;
+package com.ilyagubarev.quotepad.web.context.data;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.ilyagubarev.quotepad.structures.User;
 import com.ilyagubarev.quotepad.structures.Work;
+import com.ilyagubarev.quotepad.web.context.ConcurrentBean;
+import com.ilyagubarev.quotepad.web.data.WorkRepository;
 
 @Repository
 public class WorkRepositoryBean extends ConcurrentBean

@@ -1,4 +1,4 @@
-package com.ilyagubarev.quotepad.web.logic;
+package com.ilyagubarev.quotepad.web.context.logic;
 
 import java.util.Map;
 
@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.ilyagubarev.quotepad.structures.Author;
 import com.ilyagubarev.quotepad.structures.User;
+import com.ilyagubarev.quotepad.web.context.Bean;
 import com.ilyagubarev.quotepad.web.data.AuthorRepository;
-import com.ilyagubarev.quotepad.web.data.Bean;
+import com.ilyagubarev.quotepad.web.logic.AuthorService;
 
 @Service
 public class AuthorServiceBean extends Bean implements AuthorService {
