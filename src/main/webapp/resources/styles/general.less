@@ -1,4 +1,20 @@
-.system-data {
+/*global*/
+@bright: #3424C2;
+@viewport: 100%;
+@shadow1: 0 0 2px 3px darken(@bright, 10%);
+@shadow2: 1px 1px 0 5px darken(@bright, 25%);
+@shadow3: 3px 0 -7px 2px lighten(@bright, 40%);
+/*global*/
 
+.system-data {
     display: none;
+}
+
+.header{
+    a{
+        display: inline-block;
+        width: @viewport / 4;
+        color: @bright;
+        box-shadow: @shadow1 + @shadow2 + @shadow3;
+    }
 }
