@@ -1,3 +1,3 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-Home
+"Open your heart - I'm coming home"
