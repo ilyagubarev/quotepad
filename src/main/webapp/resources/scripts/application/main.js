@@ -19,7 +19,7 @@
 
         $stateProvider
             .state('root', {
-                url:'/',
+                url: '/',
                 views: {
                     header: {
                         templateUrl: 'resources/templates/header'
@@ -34,7 +34,7 @@
             })
 
             .state('root.authors', {
-                url:'authors',
+                url: 'authors',
                 views: {
                     'content@': {
                         templateUrl: 'resources/templates/authors',
@@ -44,7 +44,7 @@
             })
 
             .state('root.quotes', {
-                url:'quotes',
+                url: 'quotes',
                 views: {
                     'content@': {
                         templateUrl: 'resources/templates/quotes'
@@ -53,11 +53,20 @@
             })
 
             .state('root.works', {
-                url:'works',
+                url: 'works',
                 views: {
                     'content@': {
                         templateUrl: 'resources/templates/works',
                         controller: 'workController'
+                    }
+                }
+            })
+
+            .state('root.works.exclusives', {
+                url: '/exclusives',
+                views: {
+                    'exclusives@root.works': {
+                        templateUrl: 'resources/templates/exclusives'
                     }
                 }
             });
