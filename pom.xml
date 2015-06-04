@@ -19,9 +19,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <versions.java>1.8</versions.java>
         <versions.java.ee>7.0</versions.java.ee>
-        <version.libs.jackson>2.2.3</version.libs.jackson>
-        <version.libs.spring>4.1.6.RELEASE</version.libs.spring>
-        <version.misc.runner>7.0.57.2</version.misc.runner>
+        <versions.libs.jackson>2.2.3</versions.libs.jackson>
+        <versions.libs.spring>4.1.6.RELEASE</versions.libs.spring>
+        <versions.misc.runner>7.0.57.2</versions.misc.runner>
         <versions.plugins.compiler>3.3</versions.plugins.compiler>
         <versions.plugins.dependency>2.10</versions.plugins.dependency>
         <versions.plugins.javadoc>2.10.3</versions.plugins.javadoc>
@@ -40,32 +40,32 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>${version.libs.jackson}</version>
+            <version>${versions.libs.jackson}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${version.libs.jackson}</version>
+            <version>${versions.libs.jackson}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>${version.libs.jackson}</version>
+            <version>${versions.libs.jackson}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${version.libs.spring}</version>
+            <version>${versions.libs.spring}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${version.libs.spring}</version>
+            <version>${versions.libs.spring}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${version.libs.spring}</version>
+            <version>${versions.libs.spring}</version>
         </dependency>
     </dependencies>
 
@@ -132,7 +132,7 @@
                                     <artifactItem>
                                         <groupId>com.github.jsimone</groupId>
                                         <artifactId>webapp-runner</artifactId>
-                                        <version>${version.misc.runner}</version>
+                                        <version>${versions.misc.runner}</version>
                                         <destFileName>runner.jar</destFileName>
                                     </artifactItem>
                                 </artifactItems>
