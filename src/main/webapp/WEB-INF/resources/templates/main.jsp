@@ -17,8 +17,19 @@
         <div data-ui-view="content"></div>
         <div data-ui-view="footer"></div>
 
-        <script type="text/javascript" src="resources/scripts/utility/system/external/angular.js"></script>
-        <script type="text/javascript" src="resources/scripts/utility/system/external/angular-ui-router.js"></script>
-        <script type="text/javascript" src="resources/scripts/application/main.js"></script>
+        <!-- angular scripts -->
+        <script type="text/javascript" src="resources/scripts/external/angular.js"></script>
+        <script type="text/javascript" src="resources/scripts/external/angular-ui-router.js"></script>
+
+        <!-- application scripts -->
+        <script type="text/javascript" src="resources/scripts/quotepad/module.js"></script>
+        <script type="text/javascript" src="resources/scripts/quotepad/routing.js"></script>
+        <script type="text/javascript" src="resources/scripts/quotepad/authors/module.js"></script>
+        <script type="text/javascript" src="resources/scripts/quotepad/authors/controller.js"></script>
+        <script type="text/javascript" src="resources/scripts/quotepad/authors/routing.js"></script>
+        <script type="text/javascript" src="resources/scripts/quotepad/quotes/module.js"></script>
+        <script type="text/javascript" src="resources/scripts/quotepad/quotes/routing.js"></script>
+        <script type="text/javascript" src="resources/scripts/quotepad/works/module.js"></script>
+        <script type="text/javascript" src="resources/scripts/quotepad/works/routing.js"></script>
     </body>
 </html>
