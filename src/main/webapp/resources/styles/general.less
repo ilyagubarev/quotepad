@@ -1,10 +1,31 @@
 /*global*/
 @bright: #3424C2;
 @viewport: 100%;
-@shadow1: 0 0 2px 3px darken(@bright, 10%);
-@shadow2: 1px 1px 0 5px darken(@bright, 25%);
-@shadow3: 3px 0 -7px 2px lighten(@bright, 40%);
+@wrapper: 50px;
+@shadow1: 0 0 2px 3px @bright;
+@shadow2: 1px 1px 0 5px lighten(@bright,40%);
+@shadow3: 3px 0 -7px 2px darken(@bright,30%);
 /*global*/
+
+html{
+    height: @viewport;
+    body{
+        height: @viewport;
+        .header{ 
+            height: 100px;
+        }
+        .content{
+            height: @viewport - 10%; 
+            &:after{
+                padding-bottom: @wrapper;
+            }
+        }
+        .footer{
+            height: @wrapper;
+            margin-top: -@wrapper
+        }
+    }
+}
 
 .system-data {
     display: none;
@@ -15,6 +36,6 @@
         display: inline-block;
         width: @viewport / 4;
         color: @bright;
-        box-shadow: @shadow1, @shadow2, @shadow3;
+        box-shadow: @shadow1,@shadow2;
     }
 }

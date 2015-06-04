@@ -13,9 +13,9 @@
 
     <body>
 
-        <div data-ui-view="header"></div>
-        <div data-ui-view="content"></div>
-        <div data-ui-view="footer"></div>
+        <div data-ui-view="header" class="header"></div>
+        <div data-ui-view="content" class="content"></div>
+        <div data-ui-view="footer" class="footer"></div>
 
         <script type="text/javascript" src="resources/scripts/utility/system/external/angular.js"></script>
         <script type="text/javascript" src="resources/scripts/utility/system/external/angular-ui-router.js"></script>
